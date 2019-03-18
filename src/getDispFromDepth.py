@@ -8,7 +8,7 @@ def getDispFromDepth(inDepthFileName, outDispFileName):
     
     depthFile = open(inDepthFileName, "r")
 
-    img_array = np.zeros((720, 1024), np.float32)
+    img_array = np.zeros((360, 640), np.float32)
 
     num_lines = 0
     data_start_index = 24
@@ -28,7 +28,7 @@ def getDispFromDepth(inDepthFileName, outDispFileName):
     cv2.imwrite(outDispFileName, img_array)
 
 # main
-depthFileName = "../data/scene_v1_pt_left_dist.csv"
-dispFileName  = "../data/disp.png"
+depthFileName = "../data/scene_snowflake_1/scene_snowflake1_left_dist.csv"
+dispFileName  = "../data/scene_snowflake_1/disp.png"
 
 getDispFromDepth(depthFileName, dispFileName)
